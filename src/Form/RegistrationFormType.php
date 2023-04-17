@@ -22,40 +22,48 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'E-mail'
             ])
             ->add('lastname', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'Nom'
             ])
             ->add('firstname', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'Prénom'
             ])
             ->add('address', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'adresse'
             ])
             ->add('zipcode', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'Code postal'
             ])
             ->add('city', TextType::class, [
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
+                'label' =>'ville'
             ])
+            // ! todo : voir comment éliminer le rgpd consent
             ->add('RGPDConsent', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous avez accepté les Conditions Générales de vente',
                     ]),
                 ],
+                'label' => 'En m\'inscrivant sur ce site, j\'accepte les CGV ... '
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -76,6 +84,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                // 'label' => 'Mot de Passe'
             ])
         ;
     }

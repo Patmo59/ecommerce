@@ -11,14 +11,14 @@
 
 		{{ form_start(registrationForm) }}
 
-        <fieldset>
+        <fieldset class="mb-3">
             <legend>Mon identité</legend>
                 {{ form_row(registrationForm.lastname) }}
                 {{ form_row(registrationForm.firstname) }}
                 {{ form_row(registrationForm.email) }}
         </fieldset>
 
-        <fieldset>
+        <fieldset class="mb-3">
             <legend>Mes coordonnées</legend>
 		        {{ form_row(registrationForm.address) }}
 		        {{ form_row(registrationForm.zipcode) }}
@@ -32,5 +32,5 @@
 
 		{{ form_end(registrationForm) }}
 	</div>
-		<button type="submit" class="btn btn-primary btn-lg">Valider</button>
+		<button type="submit" class="btn btn-primary btn-lg my-3">M'inscrire</button>
 </section>{% endblock %}
